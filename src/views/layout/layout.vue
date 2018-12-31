@@ -25,9 +25,9 @@
 		</Layout>
 
 		<!--<section class="app-main">-->
-			<!--<transition name="fade-transform" mode="out-in">-->
-				<!--<router-view :key="key"/>-->
-			<!--</transition>-->
+		<!--<transition name="fade-transform" mode="out-in">-->
+		<!--<router-view :key="key"/>-->
+		<!--</transition>-->
 		<!--</section>-->
 	</Layout>
 </template>
@@ -91,45 +91,60 @@
 	}
 
 	.main{
-	.logo-con{
-		height: 64px;
-		padding: 10px;
-	img{
-		height: 44px;
-		width: auto;
-		display: block;
-		margin: 0 auto;
-	}
-	}
-	.header-con{
-		background: #fff;
-		padding: 0 20px;
-		width: 100%;
-	}
-	.main-layout-con{
-		height: 100%;
-		overflow: hidden;
-	}
-	.main-content-con{
-		height: calc(100% - 60px);
-		overflow: hidden;
-	}
-	.tag-nav-wrapper{
-		padding: 0;
-		height:40px;
-		background:#F0F0F0;
-	}
-	.content-wrapper{
-		padding: 18px;
-		height: calc(100% - 80px);
-		overflow: auto;
-	}
-	.left-sider{
-	.ivu-layout-sider-children{
-		overflow-y: scroll;
-		margin-right: -18px;
-	}
-	}
+		.ivu-layout-sider{
+			background: #001529;
+		}
+		.ivu-menu-dark{
+			background: #001529;
+		}
+		.ivu-menu-dark.ivu-menu-vertical .ivu-menu-opened {
+			background: #000c17;
+		}
+		.ivu-menu-dark.ivu-menu-vertical .ivu-menu-opened .ivu-menu-submenu-title {
+			background: #001529;
+		}
+		.ivu-menu-dark.ivu-menu-vertical .ivu-menu-item:hover, .ivu-menu-dark.ivu-menu-vertical .ivu-menu-submenu-title:hover{
+			background: transparent;
+		}
+		.logo-con{
+			height: 64px;
+			padding: 10px;
+			img{
+				height: 44px;
+				width: auto;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+		.header-con{
+			background: #fff;
+			padding: 0 20px;
+			width: 100%;
+		}
+		.main-layout-con{
+			height: 100%;
+			overflow: hidden;
+		}
+		.main-content-con{
+			height: calc(100% - 60px);
+			overflow: hidden;
+		}
+		.tag-nav-wrapper{
+			padding: 0;
+			height:40px;
+			background:#F0F0F0;
+		}
+		.content-wrapper{
+			padding: 18px;
+			height: calc(100% - 80px);
+			overflow: auto;
+		}
+		.left-sider{
+			.ivu-layout-sider-children{
+				overflow-y: scroll;
+				margin-right: -18px;
+			}
+		}
 	}
 	.ivu-menu-item > i{
 		margin-right: 12px !important;
@@ -148,18 +163,18 @@
 		list-style: none;
 		cursor: pointer;
 		transition: background 0.2s ease-in-out;
-	&:hover{
-		 background: rgba(100, 100, 100, 0.1);
-	 }
-	& * {
-		  color: #515a6e;
-	  }
-	.ivu-menu-item > i{
-		margin-right: 12px !important;
-	}
-	.ivu-menu-submenu > .ivu-menu > .ivu-menu-item > i {
-		margin-right: 8px !important;
-	}
+		&:hover{
+			background: rgba(100, 100, 100, 0.1);
+		}
+		& * {
+			color: #515a6e;
+		}
+		.ivu-menu-item > i{
+			margin-right: 12px !important;
+		}
+		.ivu-menu-submenu > .ivu-menu > .ivu-menu-item > i {
+			margin-right: 8px !important;
+		}
 	}
 
 	.ivu-select-dropdown.ivu-dropdown-transfer{
