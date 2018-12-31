@@ -1,12 +1,12 @@
 <template>
 	<div>
-		dashboard
+		role-list
 	</div>
 </template>
 
 <script>
 	export default {
-		name: "home"
+		name: "roleList"
 	}
 </script>
 

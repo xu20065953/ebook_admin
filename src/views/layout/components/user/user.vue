@@ -16,8 +16,7 @@
 </template>
 
 <script>
-import './user.less'
-import { mapActions } from 'vuex'
+
 export default {
   name: 'User',
   props: {
@@ -31,15 +30,12 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'handleLogOut'
-    ]),
     logout () {
-      this.handleLogOut().then(() => {
-        this.$router.push({
-          name: 'login'
-        })
-      })
+      // this.handleLogOut().then(() => {
+      //   this.$router.push({
+      //     name: 'login'
+      //   })
+      // })
     },
     message () {
       this.$router.push({
@@ -57,3 +53,18 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+	.user{
+		&-avator-dropdown{
+			cursor: pointer;
+			display: inline-block;
+			// height: 64px;
+			vertical-align: middle;
+			// line-height: 64px;
+			.ivu-badge-dot{
+				top: 16px;
+			}
+		}
+	}
+</style>

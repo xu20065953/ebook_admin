@@ -1,19 +1,14 @@
 <template>
 	<Layout style="height: 100%" class="main">
 		<Sider hide-trigger collapsible :width="256" :collapsed-width="64" v-model="collapsed" class="left-sider" :style="{overflow: 'hidden'}">
-			<!--<side-menu accordion ref="sideMenu" :active-name="$route.name" :collapsed="collapsed" @on-select="turnToPage" :menu-list="menuList">-->
-				<!--&lt;!&ndash; 需要放在菜单上面的内容，如Logo，写在side-menu标签内部，如下 &ndash;&gt;-->
-				<!--<div class="logo-con">-->
-					<!--<img v-show="!collapsed" :src="maxLogo" key="max-logo" />-->
-					<!--<img v-show="collapsed" :src="minLogo" key="min-logo" />-->
-				<!--</div>-->
-			<!--</side-menu>-->
+			<sidebar v-show="!collapsed"></sidebar>
+			<collapsed-side v-show="collapsed"></collapsed-side>
 		</Sider>
 
 		<Layout>
 			<Header class="header-con">
-				<header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
-					<!--<user :message-unread-count="unreadCount" :user-avator="userAvator"/>-->
+				<header-bar :collapsed="collapsed">
+					<user :message-unread-count="unreadCount" :user-avator="userAvator"/>
 				</header-bar>
 			</Header>
 
@@ -39,27 +34,48 @@
 
 <script>
 	import HeaderBar from './components/header-bar/index'
+	import User from './components/user/user'
+	import sidebar from './components/side-bar/sidebar'
+	import collapsedSide from './components/collapsed-side/collapsed-side'
+	import Cookies from 'js-cookie'
 
 	export default {
 		name: "layout",
 		components: {
-			HeaderBar
+			HeaderBar,
+			User,
+			sidebar,
+			collapsedSide
 		},
 		data () {
+			console.log(this.$store.state.app.sidebar.opened)
 			return {
-				collapsed: false,
+				collapsed: !this.$store.state.app.sidebar.opened,
 			}
 		},
 		computed: {
 			key() {
 				return this.$route.fullPath
+			},
+			opened() {
+				return this.$store.state.app.sidebar.opened
+			},
+			unreadCount () {
+				return this.$store.state.user.unreadCount
+			},
+			userAvator () {
+				return this.$store.state.user.avator
+			},
+		},
+
+		watch: {
+			opened(newVal, oldVal){
+				this.collapsed = !newVal;
 			}
 		},
 
 		methods: {
-			handleCollapsedChange (state) {
-				this.collapsed = state
-			},
+
 		}
 	}
 </script>

@@ -9,7 +9,7 @@
 </template>
 <script>
 import siderTrigger from './sider-trigger'
-import customBreadCrumb from './custom-bread-crumb'
+import customBreadCrumb from './bread'
 
 export default {
   name: 'HeaderBar',

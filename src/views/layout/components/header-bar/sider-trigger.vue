@@ -17,7 +17,8 @@ export default {
   },
   methods: {
     handleChange () {
-      this.$emit('on-change', !this.collapsed)
+      // this.$emit('on-change', !this.collapsed)
+	    this.$store.dispatch('toggleSideBar')
     }
   }
 }
